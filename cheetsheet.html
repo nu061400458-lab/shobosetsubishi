@@ -1,0 +1,1118 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>消防設備士4類（甲乙） 電気基礎チートシート</title>
+    <!-- フォントの読み込み -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- MathJax -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+      window.MathJax = {
+        tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] },
+        chtml: { scale: 1.05 }
+      };
+    </script>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-light: #eff6ff;
+            --secondary: #475569;
+            --success: #16a34a;
+            --success-bg: #f0fdf4;
+            --warning: #f59e0b;
+            --warning-bg: #fffbeb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+            line-height: 1.8;
+            color: var(--text-main);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 30px 15px 60px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+            color: var(--primary);
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 50px;
+            padding-bottom: 20px;
+            position: relative;
+        }
+        h1::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: var(--primary);
+            border-radius: 2px;
+        }
+
+        /* 目次 (Table of Contents) */
+        .toc {
+            background: var(--card-bg);
+            padding: 25px 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+            margin-bottom: 50px;
+            border-left: 6px solid var(--primary);
+        }
+        .toc h3 {
+            margin-top: 0;
+            margin-bottom: 20px;
+            color: var(--primary);
+            font-size: 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .toc ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 12px;
+        }
+        .toc a {
+            text-decoration: none;
+            color: var(--text-main);
+            font-weight: 500;
+            font-size: 0.95rem;
+            display: block;
+            padding: 10px 14px;
+            background: var(--bg-color);
+            border-radius: 8px;
+            transition: all 0.2s ease;
+        }
+        .toc a:hover {
+            background: var(--primary-light);
+            color: var(--primary);
+            transform: translateX(4px);
+        }
+
+        /* セクション見出し */
+        h2 {
+            color: var(--card-bg);
+            background: linear-gradient(135deg, var(--secondary), #1e293b);
+            padding: 14px 24px;
+            border-radius: 8px;
+            margin-top: 60px;
+            margin-bottom: 25px;
+            font-size: 1.4rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            scroll-margin-top: 25px;
+        }
+        .h2-subtext {
+            font-size: 0.75rem;
+            font-weight: 400;
+            color: #cbd5e1;
+            letter-spacing: 0.05em;
+        }
+
+        /* 公式ボックス */
+        .formula-box {
+            background-color: var(--primary-light);
+            border-left: 5px solid var(--primary);
+            padding: 20px 25px;
+            margin-bottom: 30px;
+            border-radius: 0 8px 8px 0;
+            font-size: 1.15rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            line-height: 1.9;
+        }
+        .formula-box strong {
+            color: var(--primary);
+            font-size: 1.25rem;
+            display: inline-block;
+            margin-bottom: 8px;
+        }
+
+        /* 🔑 重要ポイント */
+        .important-point {
+            background-color: var(--warning-bg);
+            border: 2px solid #fde68a;
+            padding: 24px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+        .important-point .title {
+            color: var(--warning);
+            font-weight: 700;
+            font-size: 1.15rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .important-point ul { 
+            padding-left: 24px; 
+            margin: 10px 0; 
+        }
+        .important-point li { 
+            margin-bottom: 6px; 
+        }
+        .important-point p { 
+            margin: 10px 0 0; 
+        }
+        .important-point .example {
+            margin-top: 20px;
+            padding: 18px;
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 8px;
+            border: 1px dashed #fcd34d;
+        }
+
+        /* 問題セクション */
+        .problem-section {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+            margin-bottom: 30px;
+        }
+        .problem {
+            margin-bottom: 35px;
+            padding-bottom: 35px;
+            border-bottom: 1px dashed var(--border);
+        }
+        .problem:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        .question-text {
+            font-weight: 700;
+            font-size: 1.05rem;
+            margin-bottom: 20px;
+            color: var(--text-main);
+            line-height: 1.7;
+        }
+        .question-text span.q-mark {
+            color: var(--primary);
+            font-size: 1.3rem;
+            margin-right: 8px;
+        }
+
+        /* アコーディオン（解答） */
+        details {
+            background-color: var(--bg-color);
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        details[open] {
+            border-color: var(--success);
+            box-shadow: 0 0 0 1px var(--success);
+        }
+        summary {
+            font-weight: 700;
+            color: var(--text-main);
+            cursor: pointer;
+            padding: 16px 20px;
+            background: var(--bg-color);
+            list-style: none;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            user-select: none;
+        }
+        summary::-webkit-details-marker {
+            display: none;
+        }
+        summary::after {
+            content: '▼';
+            color: var(--primary);
+            font-size: 0.85rem;
+            transition: transform 0.3s ease;
+        }
+        details[open] summary::after {
+            transform: rotate(180deg);
+            color: var(--success);
+        }
+        summary:hover {
+            background-color: #f1f5f9;
+        }
+        .answer-content {
+            padding: 20px;
+            border-top: 1px solid var(--border);
+            background: #fff;
+        }
+        .answer {
+            color: var(--success);
+            font-weight: 700;
+            font-size: 1.15rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .explanation {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            line-height: 1.8;
+            background: var(--success-bg);
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        /* 回路図 SVG コンテナ */
+        .svg-container {
+            display: flex;
+            justify-content: center;
+            margin: 25px 0;
+            padding: 25px;
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            overflow: visible;
+        }
+        .svg-circuit {
+            max-width: 100%;
+            height: auto;
+            overflow: visible;
+        }
+        .wire { fill: none; stroke: #334155; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round;}
+        .resistor { fill: #fff; stroke: #334155; stroke-width: 2.5; }
+        .label { font-size: 14px; font-family: 'Noto Sans JP', sans-serif; font-weight: 700; text-anchor: middle; dominant-baseline: middle; fill: #1e293b;}
+        .power-src { stroke: #334155; stroke-width: 2.5; }
+
+        /* 画像類 */
+        .reference-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin: 20px 0 30px;
+            border: 1px solid var(--border);
+            display: block;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>消防設備士4類（甲・乙）<br>電気基礎チートシート</h1>
+
+    <!-- 目次 -->
+    <nav class="toc">
+        <h3>📋 目次</h3>
+        <ul>
+            <li><a href="#ohm">オームの法則</a></li>
+            <li><a href="#power">電力</a></li>
+            <li><a href="#synth-resistor">合成抵抗（直列・並列）</a></li>
+            <li><a href="#vi-circuit">直列・並列回路の電圧と電流</a></li>
+            <li><a href="#bridge">ブリッジ回路</a></li>
+            <li><a href="#capacitor">コンデンサ（電荷と静電容量）</a></li>
+            <li><a href="#synth-capacitor">コンデンサの合成容量</a></li>
+            <li><a href="#calc-resistor">抵抗値の計算</a></li>
+            <li><a href="#joule">ジュール熱</a></li>
+            <li><a href="#coulomb">クーロンの法則</a></li>
+            <li><a href="#ac">交流回路</a></li>
+            <li><a href="#impedance">インピーダンス</a></li>
+            <li><a href="#transformer">変圧器</a></li>
+            <li><a href="#meter">計器の接続</a></li>
+        </ul>
+    </nav>
+
+    <!-- =========================
+         オームの法則
+    ========================= -->
+    <h2 id="ohm">オームの法則</h2>
+    <div class="formula-box">
+        <strong>$V = I \times R$</strong><br>
+        （電圧 $V$）＝（電流 $A$）$\times$（抵抗 $\Omega$）
+    </div>
+    
+    <div class="important-point">
+        <div class="title">🔑 重要ポイント：この公式は「変形」して至るところに代入される！</div>
+        <p>$V = I \times R$ は単体で使うだけでなく、<strong>電圧か電流のどちらかが分からない問題で、他の公式に代入するための"つなぎ役"</strong>として何度も登場します。3つの形を自在に使い分けられるようにしておくことが重要です。</p>
+        <ul>
+            <li>$V = I \times R$（電圧を求める）</li>
+            <li>$I = \frac{V}{R}$（電流を求める）</li>
+            <li>$R = \frac{V}{I}$（抵抗を求める）</li>
+        </ul>
+        <div class="example">
+            <em>【具体例】</em><br>
+            電力の公式 <strong>$P = V \times I$</strong> において、問題文で「電圧 $V$」が与えられていない場合があります。<br>
+            そのとき、$V$ の部分にオームの法則 <strong>$V = I \times R$</strong> を丸ごと代入すると…<br><br>
+            $P = (I \times R) \times I = $ <strong>$I^2 \times R$</strong><br><br>
+            つまり「電圧が分からないけど電流と抵抗は分かる」といった問題でも、オームの法則を一度経由するだけで必ず解けるようになります。
+        </div>
+    </div>
+
+    <div class="problem-section">
+        <div class="problem">
+            <div class="question-text"><span class="q-mark">Q.</span>$10\ \Omega$ の抵抗に $2\text{V}$ の電圧をかけたときに流れる電流の値は？</div>
+            
+            <div class="svg-container">
+                <svg class="svg-circuit" viewBox="0 0 200 120" width="200">
+                    <path class="wire" d="M 50,90 L 50,30 L 80,30 M 120,30 L 150,30 L 150,55" />
+                    <path class="power-src" d="M 135,55 L 165,55" /> 
+                    <path class="power-src" d="M 142,65 L 158,65" stroke-width="4"/> 
+                    <path class="wire" d="M 150,65 L 150,90 L 50,90" />
+                    <rect class="resistor" x="80" y="20" width="40" height="20" />
+                    <text class="label" x="100" y="30">10Ω</text>
+                    <text class="label" x="100" y="75">V = 2V</text>
+                </svg>
+            </div>
+
+            <details>
+                <summary>解答と解説を見る</summary>
+                <div class="answer-content">
+                    <div class="answer">✅ 0.2 A</div>
+                    <div class="explanation">
+                        公式を変形して $I = \frac{V}{R}$ とします。<br>
+                        $I = \frac{2}{10} = 0.2\text{ A}$ となります。
+                    </div>
+                </div>
+            </details>
+        </div>
+    </div>
+
+    <!-- =========================
+         電力
+    ========================= -->
+    <h2 id="power">電力</h2>
+    <div class="formula-box">
+        <strong>$P = V \times I$</strong><br>
+        （電力 $W$）＝（電圧 $V$）$\times$（電流 $A$）
+    </div>
+
+    <div class="problem-section">
+        <div class="problem">
+            <div class="question-text"><span class="q-mark">Q.</span>電圧 $6\text{V}$ の電源に抵抗を接続し、$0.5\text{A}$ の電流が流れたとき、電力 $P$ の値は？</div>
+            <div class="svg-container">
+                <svg class="svg-circuit" viewBox="0 0 200 120" width="200">
+                    <path class="wire" d="M 40,90 L 40,30 L 70,30 M 130,30 L 160,30 L 160,90" />
+                    <path class="power-src" d="M 95,80 L 95,100 M 105,85 L 105,95" stroke-width="3"/>
+                    <path class="wire" d="M 40,90 L 95,90 M 105,90 L 160,90" />
+                    <text class="label" x="100" y="110">6V</text>
+                    <rect class="resistor" x="70" y="20" width="60" height="20" />
+                    <text class="label" x="100" y="30">R(不明)</text>
+                    <path class="wire" d="M 135,30 L 150,30 L 145,25 M 150,30 L 145,35" stroke="#2563eb" fill="none" stroke-width="2"/>
+                    <text class="label" fill="#2563eb" x="145" y="15">I=0.5A</text>
+                </svg>
+            </div>
+            <details><summary>解答と解説を見る</summary><div class="answer-content"><div class="answer">✅ 3 W</div><div class="explanation">$P = 6 \times 0.5 = 3\text{ W}$</div></div></details>
+        </div>
+        
+        <div class="problem">
+            <div class="question-text"><span class="q-mark">Q.</span>$10\ \Omega$ の抵抗の電熱線に $2\text{V}$ の電圧をかけるとき、消費電力 $P$ の値は？</div>
+            <div class="svg-container">
+                <svg class="svg-circuit" viewBox="0 0 200 120" width="200">
+                    <path class="wire" d="M 40,90 L 40,30 L 70,30 M 130,30 L 160,30 L 160,90" />
+                    <path class="power-src" d="M 95,80 L 95,100 M 105,85 L 105,95" stroke-width="3"/>
+                    <path class="wire" d="M 40,90 L 95,90 M 105,90 L 160,90" />
+                    <text class="label" x="100" y="110">2V</text>
+                    <rect class="resistor" x="70" y="20" width="60" height="20" />
+                    <text class="label" x="100" y="30">10Ω</text>
+                    <path class="wire" d="M 135,30 L 150,30 L 145,25 M 150,30 L 145,35" stroke="#2563eb" fill="none" stroke-width="2"/>
+                    <text class="label" fill="#2563eb" x="145" y="15">I=?</text>
+                </svg>
+            </div>
+            <details><summary>解答と解説を見る</summary><div class="answer-content"><div class="answer">✅ 0.4 W</div><div class="explanation">まずオームの法則で電流を求めます。<br>$I = \frac{2}{10} = 0.2\text{ A}$。<br>次に $P = 2 \times 0.2 = 0.4\text{ W}$<br>（※ $P = \frac{V^2}{R}$ に代入して $\frac{4}{10}=0.4\text{W}$ としても計算可能です）</div></div></details>
+        </div>
+        
+        <div class="problem">
+            <div class="question-text"><span class="q-mark">Q.</span>$10\ \Omega$ の抵抗に $2\text{A}$ の電流を流したとき、この抵抗で消費される電力 $P$ の値は？</div>
+            <div class="svg-container">
+                <svg class="svg-circuit" viewBox="0 0 200 120" width="200">
+                    <path class="wire" d="M 40,90 L 40,30 L 70,30 M 130,30 L 160,30 L 160,90" />
+                    <path class="power-src" d="M 95,80 L 95,100 M 105,85 L 105,95" stroke-width="3"/>
+                    <path class="wire" d="M 40,90 L 95,90 M 105,90 L 160,90" />
+                    <text class="label" x="100" y="110">V=?</text>
+                    <rect class="resistor" x="70" y="20" width="60" height="20" />
+                    <text class="label" x="100" y="30">10Ω</text>
+                    <path class="wire" d="M 135,30 L 150,30 L 145,25 M 150,30 L 145,35" stroke="#2563eb" fill="none" stroke-width="2"/>
+                    <text class="label" fill="#2563eb" x="145" y="15">I=2A</text>
+                </svg>
+            </div>
+            <details><summary>解答と解説を見る</summary><div class="answer-content"><div class="answer">✅ 40 W</div><div class="explanation">まずオームの法則で電圧を求めます。<br>$V = 2 \times 10 = 20\text{ V}$。<br>次に $P = 20 \times 2 = 40\text{ W}$<br>（※公式 $P = I^2 \times R$ を使い、$2^2 \times 10 = 40\text{W}$ と計算する方が早いです）</div></div></details>
+        </div>
+    </div>
+
+    <!-- =========================
+         合成抵抗
+    ========================= -->
+    <h2 id="synth-resistor">合成抵抗（直列・並列）</h2>
+    <div class="formula-box">
+        <strong>直列：</strong> $R = R_1 + R_2 + R_3$<br><br>
+        <strong>並列：</strong> $R = \frac{1}{\frac{1}{R_1} + \frac{1}{R_2} + \frac{1}{R_3}}$
+    </div>
+    
+    <div class="problem-section">
+        <div class="problem">
+            <div class="question-text"><span class="q-mark">Q.</span>$4\ \Omega$、$6\ \Omega$、$10\ \Omega$ の3つの抵抗をすべて直列につないだ。全体の合成抵抗 $R$ は？</div>
+            <div class="svg-container">
+                <svg class="svg-circuit" viewBox="0 0 300 50" width="300">
+                    <path class="wire" d="M 0,25 L 40,25 M 80,25 L 110,25 M 150,25 L 180,25 M 220,25 L 260,25" />
+                    <rect class="resistor" x="40" y="15" width="40" height="20" /><text class="label" x="60" y="25">4Ω</text>
+                    <rect class="resistor" x="110" y="15" width="40" height="20" /><text class="label" x="130" y="25">6Ω</text>
+                    <rect class="resistor" x="180" y="15" width="40" height="20" /><text class="label" x="200" y="25">10Ω</text>
+                </svg>
+            </div>
+            <details><summary>解答と解説を見る</summary><div class="answer-content"><div class="answer">✅ 20 $\Omega$</div><div class="explanation">直列はそのまま足し算をします。<br>$R = 4 + 6 + 10 = 20\ \Omega$</div></div></details>
+        </div>
+
+        <div class="problem">
+            <div class="question-text"><span class="q-mark">Q.</span>$10\ \Omega$、$20\ \Omega$、$20\ \Omega$ の3つの抵抗をすべて並列につないだ。全体の合成抵抗 $R$ は？</div>
+            <div class="svg-container">
+                <svg class="svg-circuit" viewBox="0 0 200 120" width="200">
+                    <path class="wire" d="M 20,60 L 50,60 M 150,60 L 180,60" />
+                    <path class="wire" d="M 50,20 L 50,100 M 150,20 L 150,100" />
+                    <path class="wire" d="M 50,20 L 80,20 M 120,20 L 150,20" />
+                    <path class="wire" d="M 50,60 L 80,60 M 120,60 L 150,60" />
+                    <path class="wire" d="M 50,100 L 80,100 M 120,100 L 150,100" />
+                    <rect class="resistor" x="80" y="10" width="40" height="20" /><text class="label" x="100" y="20">10Ω</text>
+                    <rect class="resistor" x="80" y="50" width="40" height="20" /><text class="label" x="100" y="60">20Ω</text>
+                    <rect class="resistor" x="80" y="90" width="40" height="20" /><text class="label" x="100" y="100">20Ω</text>
+                </svg>
+            </div>
+            <details><summary>解答と解説を見る</summary><div class="answer-content"><div class="answer">✅ 5 $\Omega$</div><div class="explanation">並列なので、逆数の和の公式を使います。<br>分母を $20$ に揃えて（通分して）足し算をします。<br>$\frac{1}{R} = \frac{1}{10} + \frac{1}{20} + \frac{1}{20}$<br>$\frac{1}{R} = \frac{2}{20} + \frac{1}{20} + \frac{1}{20}$<br>$\frac{1}{R} = \frac{4}{20}$<br>約分して $\frac{1}{R} = \frac{1}{5}$ となるため、ひっくり返して $R = 5\ \Omega$ となります。</div></div></details>
+        </div>
+
+        <div class="problem">
+            <div class="question-text"><span class="q-mark">Q.</span>$5\ \Omega$ の抵抗 $R_1$ と、並列につながれた $12\ \Omega$ と $6\ \Omega$ の抵抗組（$R_2, R_3$）を直列につないだ。合成抵抗は？</div>
+            <div class="svg-container">
+                <svg class="svg-circuit" viewBox="0 0 300 80" width="300">
+                    <path class="wire" d="M 10,40 L 40,40 M 80,40 L 120,40 M 220,40 L 250,40" />
+                    <rect class="resistor" x="40" y="30" width="40" height="20" /><text class="label" x="60" y="40">5Ω</text>
+                    <path class="wire" d="M 120,20 L 120,60 M 220,20 L 220,60" />
+                    <path class="wire" d="M 120,20 L 150,20 M 190,20 L 220,20" />
+                    <path class="wire" d="M 120,60 L 150,60 M 190,60 L 220,60" />
+                    <rect class="resistor" x="150" y="10" width="40" height="20" /><text class="label" x="170" y="20">12Ω</text>
+                    <rect class="resistor" x="150" y="50" width="40" height="20" /><text class="label" x="170" y="60">6Ω</text>
+                </svg>
+            </div>
+            <details><summary>解答と解説を見る</summary><div class="answer-content"><div class="answer">✅ 9 $\Omega$</div><div class="explanation">先に並列になっている $12\ \Omega$ と $6\ \Omega$ の部分（$R_{並列}$ とします）を計算します。<br>$\frac{1}{R_{並列}} = \frac{1}{12} + \frac{1}{6}$<br>$\frac{1}{R_{並列}} = \frac{1}{12} + \frac{2}{12}$<br>$\frac{1}{R_{並列}} = \frac{3}{12} = \frac{1}{4}$<br>よって $R_{並列} = 4\ \Omega$。<br>これと直列の $5\ \Omega$ を足し算して、$5 + 4 = 9\ \Omega$</div></div></details>
+        </div>
+
+        <div class="problem">
+            <div class="question-text"><span class="q-mark">Q.</span>直列につないだ $3\ \Omega$ と $5\ \Omega$ の枝Aと、それに対し並列な $8\ \Omega$ の抵抗Bがある。合成抵抗は？</div>
+            <div class="svg-container">
+                <svg class="svg-circuit" viewBox="0 0 250 80" width="250">
+                    <path class="wire" d="M 10,40 L 40,40 M 200,40 L 230,40" />
+                    <path class="wire" d="M 40,20 L 40,60 M 200,20 L 200,60" />
+                    <!-- 枝A -->
+                    <path class="wire" d="M 40,20 L 70,20 M 110,20 L 130,20 M 170,20 L 200,20" />
+                    <rect class="resistor" x="70" y="10" width="40" height="20" /><text class="label" x="90" y="20">3Ω</text>
+                    <rect class="resistor" x="130" y="10" width="40" height="20" /><text class="label" x="150" y="20">5Ω</text>
+                    <!-- 枝B -->
+                    <path class="wire" d="M 40,60 L 115,60 M 155,60 L 200,60" />
+                    <rect class="resistor" x="115" y="50" width="40" height="20" /><text class="label" x="135" y="60">8Ω</text>
+                </svg>
+            </div>
+            <details><summary>解答と解説を見る</summary><div class="answer-content"><div class="answer">✅ 4 $\Omega$</div><div class="explanation">先に上の枝Aの直列部分（$R_{直列}$ とします）を計算します。<br>$R_{直列} = 3 + 5 = 8\ \Omega$<br>これと下の $8\ \Omega$ の抵抗が並列になっているので、全体の抵抗 $R$ は<br>$\frac{1}{R} = \frac{1}{8} + \frac{1}{8}$<br>$\frac{1}{R} = \frac{2}{8} = \frac{1}{4}$<br>よって $R = 4\ \Omega$<br></div></div></details>
+        </div>
+
+        <div class="problem">
+            <div class="question-text"><span class="q-mark">Q.</span>並列の $20\ \Omega$ と $20\ \Omega$（組A）と、並列の $30\ \Omega$ と $60\ \Omega$（組B）を直列につないだ。合成抵抗は？</div>
+            <div class="svg-container">
+                <svg class="svg-circuit" viewBox="0 0 350 120" width="350">
+                    <!-- 組A -->
+                    <path class="wire" d="M 10,60 L 40,60 M 120,60 L 160,60" />
+                    <path class="wire" d="M 40,30 L 40,90 M 120,30 L 120,90" />
+                    <path class="wire" d="M 40,30 L 60,30 M 100,30 L 120,30" />
+                    <path class="wire" d="M 40,90 L 60,90 M 100,90 L 120,90" />
+                    <rect class="resistor" x="60" y="20" width="40" height="20" /><text class="label" x="80" y="30">20Ω</text>
+                    <rect class="resistor" x="60" y="80" width="40" height="20" /><text class="label" x="80" y="90">20Ω</text>
+                    
+                    <path class="wire" d="M 160,60 L 190,60 M 270,60 L 300,60" />
+                    <!-- 組B -->
+                    <path class="wire" d="M 190,30 L 190,90 M 270,30 L 270,90" />
+                    <path class="wire" d="M 190,30 L 210,30 M 250,30 L 270,30" />
+                    <path class="wire" d="M 190,90 L 210,90 M 250,90 L 270,90" />
+                    <rect class="resistor" x="210" y="20" width="40" height="20" /><text class="label" x="230" y="30">30Ω</text>
+                    <rect class="resistor" x="210" y="80" width="40" height="20" /><text class="label" x="230" y="90">60Ω</text>
+                </svg>
+            </div>
+            <details><summary>解答と解説を見る</summary><div class="answer-content"><div class="answer">✅ 30 $\Omega$</div><div class="explanation">それぞれの組の並列部分を先に計算します。<br>組A（$R_A$ とします）：<br>$\frac{1}{R_A} = \frac{1}{20} + \frac{1}{20} = \frac{2}{20} = \frac{1}{10}$ より $R_A = 10\ \Omega$<br>組B（$R_B$ とします）：<br>$\frac{1}{R_B} = \frac{1}{30} + \frac{1}{60}$<br>$\frac{1}{R_B} = \frac{2}{60} + \frac{1}{60} = \frac{3}{60} = \frac{1}{20}$ より $R_B = 20\ \Omega$<br>最後に2つを直列として足し算します。<br>$10 + 20 = 30\ \Omega$</div></div></details>
+        </div>
+    </div>
+
+    <!-- =========================
+         直列・並列回路の電圧と電流
+    ========================= -->
+    <h2 id="vi-circuit">直列・並列回路の電圧と電流</h2>
+    <div class="formula-box">
+        <strong>直列（電圧）：</strong> $V = V_1 + V_2 + V_3$<br><br>
+        <strong>並列（電流）：</strong> $I = I_1 + I_2 + I_3$
+    </div>
+
+    <div class="problem-section">
+        <div class="problem">
+            <div class="question-text"><span class="q-mark">Q.</span>$10\ \Omega, 15\ \Omega, 25\ \Omega$ を直列接続し、全体に $0.4\text{A}$ の電流が流れている。各電圧 $V_1, V_2, V_3$ と全体電圧 $V$ は？</div>
+            <div class="svg-container">
+                <svg class="svg-circuit" viewBox="0 0 350 70" width="350">
+                    <path class="wire" d="M 10,25 L 40,25 M 80,25 L 130,25 M 170,25 L 220,25 M 260,25 L 300,25" />
+                    <rect class="resistor" x="40" y="15" width="40" height="20" /><text class="label" x="60" y="25">10Ω</text>
+                    <rect class="resistor" x="130" y="15" width="40" height="20" /><text class="label" x="150" y="25">15Ω</text>
+                    <rect class="resistor" x="220" y="15" width="40" height="20" /><text class="label" x="240" y="25">25Ω</text>
+                    <!-- 電流の矢印 -->
+                    <path class="wire" d="M 270,15 L 290,15 L 285,10 M 290,15 L 285,20" stroke="#ef4444"/>
+                    <text class="label" fill="#ef4444" x="280" y="30">0.4A</text>
+                </svg>
+            </div>
+            <details><summary>解答と解説を見る</summary><div class="answer-content"><div class="answer">✅ $V_1 = 4\text{V},\ V_2 = 6\text{V},\ V_3 = 10\text{V}$。全体 $V = 20\text{V}$</div><div class="explanation">$V_1 = 10 \times 0.4 = 4\text{V}$<br>$V_2 = 15 \times 0.4 = 6\text{V}$<br>$V_3 = 25 \times 0.4 = 10\text{V}$<br>全体の電圧は各電圧の足し算になるので、 $V = 4 + 6 + 10 = 20\text{V}$</div></div></details>
+        </div>
+
+        <div class="problem">
+            <div class="question-text"><span class="q-mark">Q.</span>3つの抵抗が並列につながれた回路で、各枝の電流が $I_1 = 1\text{A}$、$I_2 = 2\text{A}$、$I_3 = 4\text{A}$ のとき、全体の電流 $I$ はいくらですか。</div>
+            <div class="svg-container">
+                <svg class="svg-circuit" viewBox="0 0 250 140" width="250">
+                    <path class="wire" d="M 20,70 L 50,70" />
+                    <path class="wire" d="M 50,30 L 50,110 M 190,30 L 190,110" />
+                    
+                    <!-- Branch 1 -->
+                    <path class="wire" d="M 50,30 L 100,30 M 140,30 L 190,30" />
+                    <rect class="resistor" x="100" y="20" width="40" height="20" />
+                    <path d="M 60,30 L 75,30 L 70,25 M 75,30 L 70,35" fill="none" stroke="#2563eb" stroke-width="2" />
+                    <text class="label" x="75" y="15" fill="#2563eb">I<tspan dy="3" font-size="11">1</tspan><tspan dy="-3"> = 1A</tspan></text>
+
+                    <!-- Branch 2 -->
+                    <path class="wire" d="M 50,70 L 100,70 M 140,70 L 190,70" />
+                    <rect class="resistor" x="100" y="60" width="40" height="20" />
+                    <path d="M 60,70 L 75,70 L 70,65 M 75,70 L 70,75" fill="none" stroke="#2563eb" stroke-width="2" />
+                    <text class="label" x="75" y="55" fill="#2563eb">I<tspan dy="3" font-size="11">2</tspan><tspan dy="-3"> = 2A</tspan></text>
+
+                    <!-- Branch 3 -->
+                    <path class="wire" d="M 50,110 L 100,110 M 140,110 L 190,110" />
+                    <rect class="resistor" x="100" y="100" width="40" height="20" />
+                    <path d="M 60,110 L 75,110 L 70,105 M 75,110 L 70,115" fill="none" stroke="#2563eb" stroke-width="2" />
+                    <text class="label" x="75" y="95" fill="#2563eb">I<tspan dy="3" font-size="11">3</tspan><tspan dy="-3"> = 4A</tspan></text>
+
+                    <path class="wire" d="M 190,70 L 220,70" />
+                    
+                    <!-- Main current I -->
+                    <path d="M 25,70 L 40,70 L 35,65 M 40,70 L 35,75" fill="none" stroke="#ef4444" stroke-width="2" />
+                    <text class="label" x="35" y="50" fill="#ef4444">I = ?</text>
+                </svg>
+            </div>
+            <details><summary>解答と解説を見る</summary><div class="answer-content"><div class="answer">✅ 7 A</div><div class="explanation">並列回路では、各枝に分かれて流れる電流をすべて足し合わせると全体の電流になります。<br>$I = I_1 + I_2 + I_3$<br>$I = 1 + 2 + 4 = 7\text{A}$</div></div></details>
+        </div>
+    </div>
+
+    <!-- =========================
+         ブリッジ回路
+    ========================= -->
+    <h2 id="bridge">ブリッジ回路</h2>
+    <div class="formula-box">
+        <strong>平衡条件： $R_1 \times R_4 = R_2 \times R_3$</strong><br>
+        対角の積が等しい（平衡状態）とき、中央には電流が流れない。
+    </div>
+    
+    <div class="problem-section">
+        <div class="question-text" style="text-align: center; color: var(--primary);">【ブリッジ回路の基本構成】</div>
+        <div class="svg-container" style="border: none; margin-top: 0; padding-top: 0;">
+            <svg class="svg-circuit" viewBox="0 0 250 140" width="250">
+                <path class="wire" d="M 20,70 L 50,70 M 200,70 L 230,70" />
+                <path class="wire" d="M 50,30 L 50,110 M 200,30 L 200,110" />
+                <path class="wire" d="M 50,30 L 70,30 M 110,30 L 140,30 M 180,30 L 200,30" />
+                <rect class="resistor" x="70" y="20" width="40" height="20" />
+                <text class="label" x="90" y="30">R<tspan dy="3" font-size="11">1</tspan></text>
+                <rect class="resistor" x="140" y="20" width="40" height="20" />
+                <text class="label" x="160" y="30">R<tspan dy="3" font-size="11">3</tspan></text>
+                <path class="wire" d="M 50,110 L 70,110 M 110,110 L 140,110 M 180,110 L 200,110" />
+                <rect class="resistor" x="70" y="100" width="40" height="20" />
+                <text class="label" x="90" y="110">R<tspan dy="3" font-size="11">2</tspan></text>
+                <rect class="resistor" x="140" y="100" width="40" height="20" />
+                <text class="label" x="160" y="110">R<tspan dy="3" font-size="11">4</tspan></text>
+                <path class="wire" d="M 125,30 L 125,50 M 125,90 L 125,110" />
+                <rect class="resistor" x="115" y="50" width="20" height="40" />
+                <text class="label" x="125" y="70">R<tspan dy="3" font-size="11">5</tspan></text>
+            </svg>
+        </div>
+
+        <div class="problem">
+            <div class="question-text"><span class="q-mark">Q.</span>電源 $60\text{V}$。$R_1=15\ \Omega, R_2=30\ \Omega, R_3=45\ \Omega, R_4=R_x\ \Omega$ で平衡状態。$R_x$ の値は？</div>
+            <details><summary>解答と解説を見る</summary><div class="answer-content"><div class="answer">✅ 90 $\Omega$</div><div class="explanation">対角線の掛け算をイコールで結びます。<br>$15 \times R_x = 30 \times 45$<br>$15 \times R_x = 1350$<br>$R_x = 90\ \Omega$</div></div></details>
+        </div>
+        <div class="problem">
+            <div class="question-text"><span class="q-mark">Q.</span>電源 $24\text{V}$、$R_1=10\ \Omega, R_2=20\ \Omega, R_3=30\ \Omega, R_4=60\ \Omega$、中央 $R_5=50\ \Omega$。<br>中央に流れる電流 $I_5$ と、全電流 $I$ を求めよ。</div>
+            <details><summary>解答と解説を見る</summary><div class="answer-content"><div class="answer">✅ $I_5 = 0\text{ A}$、 全電流 $I = 0.9\text{ A}$</div><div class="explanation">$10 \times 60 = 20 \times 30 = 600$ となり、条件を満たすため平衡状態。中央には電流は流れないので $I_5=0$。<br><br>中央を無視して「上の直列」「下の直列」の並列回路として計算します。<br>上側の合成 $10+30=40\ \Omega$ (流れる電流 $24 \div 40 = 0.6\text{A}$)<br>下側の合成 $20+60=80\ \Omega$ (流れる電流 $24 \div 80 = 0.3\text{A}$)<br>全電流 $I = 0.6 + 0.3 = 0.9\text{A}$</div></div></details>
+        </div>
+    </div>
+
+    <!-- =========================
+         コンデンサ
+    ========================= -->
+    <h2 id="capacitor">コンデンサ（電荷と静電容量）</h2>
+    <div class="formula-box">
+        <strong>$Q = C \times V$</strong><br>
+        （電荷 $C$ クーロン）＝（静電容量 $F$ ファラド）$\times$（電圧 $V$）
+    </div>
+
+    <div class="problem-section">
+        <div class="problem">
+            <div class="question-text"><span class="q-mark">Q.</span>静電容量 $20\ \mu\text{F}$ のコンデンサに $100\text{V}$ の電圧を加えた。蓄えられる電荷 $Q$ [C] は？</div>
+            <div class="svg-container">
+                <svg class="svg-circuit" viewBox="0 0 200 120" width="200">
+                    <path class="wire" d="M 40,90 L 40,30 L 90,30 M 110,30 L 160,30 L 160,90" />
+                    <!-- コンデンサ -->
+                    <path class="wire" d="M 90,15 L 90,45 M 110,15 L 110,45" stroke-width="4"/>
+                    <text class="label" x="100" y="5">C=20μF</text>
+                    <!-- 電池 -->
+                    <path class="power-src" d="M 95,80 L 95,100 M 105,85 L 105,95" stroke-width="3"/>
+                    <path class="wire" d="M 40,90 L 95,90 M 105,90 L 160,90" />
+                    <text class="label" x="100" y="110">100V</text>
+                    <text class="label" x="140" y="15" fill="#334155">Q=?</text>
+                </svg>
+            </div>
+            <details><summary>解答と解説を見る</summary><div class="answer-content"><div class="answer">✅ 0.002 C ($2 \times 10^{-3}\text{ C}$)</div><div class="explanation">$\mu$（マイクロ）は $10^{-6}$ 倍です。<br>$Q = (20 \times 10^{-6}) \times 100 = 2000 \times 10^{-6} = 0.002\text{ C}$</div></div></details>
+        </div>
+        
+        <div class="problem">
+            <div class="question-text"><span class="q-mark">Q.</span>$200\text{V}$ の電圧を加えると $0.01\text{ C}$ の電荷が蓄えられた。静電容量 $C$ [$\mu\text{F}$] は？</div>
+            <div class="svg-container">
+                <svg class="svg-circuit" viewBox="0 0 200 120" width="200">
+                    <path class="wire" d="M 40,90 L 40,30 L 90,30 M 110,30 L 160,30 L 160,90" />
+                    <path class="wire" d="M 90,15 L 90,45 M 110,15 L 110,45" stroke-width="4"/>
+                    <text class="label" x="100" y="5">C=?</text>
+                    <path class="power-src" d="M 95,80 L 95,100 M 105,85 L 105,95" stroke-width="3"/>
+                    <path class="wire" d="M 40,90 L 95,90 M 105,90 L 160,90" />
+                    <text class="label" x="100" y="110">200V</text>
+                    <text class="label" x="145" y="15" fill="#334155">Q=0.01C</text>
+                </svg>
+            </div>
+            <details><summary>解答と解説を見る</summary><div class="answer-content"><div class="answer">✅ 50 $\mu\text{F}$</div><div class="explanation">$C = \frac{Q}{V} = \frac{0.01}{200} = 0.00005\text{ F}$。<br>これを $\mu\text{F}$ に直すため $1,000,000$ 倍して $50\ \mu\text{F}$。</div></div></details>
+        </div>
+        
+        <div class="problem">
+            <div class="question-text"><span class="q-mark">Q.</span>$50\ \mu\text{F}$ のコンデンサに $0.006\text{ C}$ の電荷がある。電圧 $V$ [V] は？</div>
+            <div class="svg-container">
+                <svg class="svg-circuit" viewBox="0 0 200 120" width="200">
+                    <path class="wire" d="M 40,90 L 40,30 L 90,30 M 110,30 L 160,30 L 160,90" />
+                    <path class="wire" d="M 90,15 L 90,45 M 110,15 L 110,45" stroke-width="4"/>
+                    <text class="label" x="100" y="5">C=50μF</text>
+                    <path class="power-src" d="M 95,80 L 95,100 M 105,85 L 105,95" stroke-width="3"/>
+                    <path class="wire" d="M 40,90 L 95,90 M 105,90 L 160,90" />
+                    <text class="label" x="100" y="110">V=?</text>
+                    <text class="label" x="145" y="15" fill="#334155">Q=0.006C</text>
+                </svg>
+            </div>
+            <details><summary>解答と解説を見る</summary><div class="answer-content"><div class="answer">✅ 120 V</div><div class="explanation">$V = \frac{Q}{C} = \frac{0.006}{50 \times 10^{-6}} = \frac{0.006}{0.00005} = 120\text{ V}$</div></div></details>
+        </div>
+    </div>
+
+    <!-- =========================
+         コンデンサの合成
+    ========================= -->
+    <h2 id="synth-capacitor">コンデンサの合成容量</h2>
+    <div class="formula-box">
+        <strong>並列（足し算）：</strong> $C = C_1 + C_2 + C_3$<br>
+        <strong>直列（逆数）：</strong> $C = \frac{1}{\frac{1}{C_1} + \frac{1}{C_2} + \frac{1}{C_3}}$<br>
+    </div>
+
+    <div class="problem-section">
+        <div class="problem">
+            <div class="question-text"><span class="q-mark">Q.</span>$2\ \mu\text{F}, 3\ \mu\text{F}, 5\ \mu\text{F}$ を並列に接続。合成容量 $C$ は？</div>
+            <div class="svg-container">
+                <svg class="svg-circuit" viewBox="0 0 200 120" width="200">
+                    <path class="wire" d="M 20,60 L 50,60 M 150,60 L 180,60" />
+                    <path class="wire" d="M 50,20 L 50,100 M 150,20 L 150,100" />
+                    <path class="wire" d="M 50,20 L 90,20 M 110,20 L 150,20" />
+                    <path class="wire" d="M 50,60 L 90,60 M 110,60 L 150,60" />
+                    <path class="wire" d="M 50,100 L 90,100 M 110,100 L 150,100" />
+                    <path class="wire" d="M 90,10 L 90,30 M 110,10 L 110,30" stroke-width="3"/>
+                    <path class="wire" d="M 90,50 L 90,70 M 110,50 L 110,70" stroke-width="3"/>
+                    <path class="wire" d="M 90,90 L 90,110 M 110,90 L 110,110" stroke-width="3"/>
+                </svg>
+            </div>
+            <details><summary>解答と解説を見る</summary><div class="answer-content"><div class="answer">✅ 10 $\mu\text{F}$</div><div class="explanation">コンデンサの並列はそのまま足します。<br>$C = 2 + 3 + 5 = 10\ \mu\text{F}$</div></div></details>
+        </div>
+        
+        <div class="problem">
+            <div class="question-text"><span class="q-mark">Q.</span>$6\ \mu\text{F}, 12\ \mu\text{F}, 4\ \mu\text{F}$ を直列に接続。合成容量 $C$ は？</div>
+            <div class="svg-container">
+                <svg class="svg-circuit" viewBox="0 0 300 80" width="300">
+                    <path class="wire" d="M 10,30 L 60,30 M 80,30 L 140,30 M 160,30 L 220,30 M 240,30 L 290,30" />
+                    <path class="wire" d="M 60,15 L 60,45 M 80,15 L 80,45" stroke-width="3"/>
+                    <text class="label" x="70" y="65">6μF</text>
+                    <path class="wire" d="M 140,15 L 140,45 M 160,15 L 160,45" stroke-width="3"/>
+                    <text class="label" x="150" y="65">12μF</text>
+                    <path class="wire" d="M 220,15 L 220,45 M 240,15 L 240,45" stroke-width="3"/>
+                    <text class="label" x="230" y="65">4μF</text>
+                </svg>
+            </div>
+            <details><summary>解答と解説を見る</summary><div class="answer-content"><div class="answer">✅ 2 $\mu\text{F}$</div><div class="explanation">コンデンサの直列は逆数の和で計算します。<br>分母を $12$ に揃えて（通分して）足し算をします。<br>$\frac{1}{C} = \frac{1}{6} + \frac{1}{12} + \frac{1}{4}$<br>$\frac{1}{C} = \frac{2}{12} + \frac{1}{12} + \frac{3}{12}$<br>$\frac{1}{C} = \frac{6}{12} = \frac{1}{2}$<br>ひっくり返して $C = 2\ \mu\text{F}$</div></div></details>
+        </div>
+
+        <div class="problem">
+            <div class="question-text"><span class="q-mark">Q.</span>$2\mu\text{F}$ と $4\mu\text{F}$ のコンデンサを並列につなぎ、それらに $6\mu\text{F}$ のコンデンサを直列につなぎました。回路全体の合成容量は何 $\mu\text{F}$ ですか。</div>
+            <div class="svg-container">
+                <svg class="svg-circuit" viewBox="0 0 300 120" width="300">
+                    <path class="wire" d="M 10,60 L 40,60" />
+                    <path class="wire" d="M 40,30 L 40,90" />
+                    <!-- 2uF branch -->
+                    <path class="wire" d="M 40,30 L 70,30 M 90,30 L 120,30" />
+                    <path class="wire" d="M 70,15 L 70,45 M 90,15 L 90,45" stroke-width="3"/>
+                    <text class="label" x="80" y="10">2μF</text>
+                    <!-- 4uF branch -->
+                    <path class="wire" d="M 40,90 L 70,90 M 90,90 L 120,90" />
+                    <path class="wire" d="M 70,75 L 70,105 M 90,75 L 90,105" stroke-width="3"/>
+                    <text class="label" x="80" y="115">4μF</text>
+                    <!-- Join and series 6uF -->
+                    <path class="wire" d="M 120,30 L 120,90" />
+                    <path class="wire" d="M 120,60 L 170,60 M 190,60 L 250,60" />
+                    <path class="wire" d="M 170,45 L 170,75 M 190,45 L 190,75" stroke-width="3"/>
+                    <text class="label" x="180" y="40">6μF</text>
+                </svg>
+            </div>
+            <details><summary>解答と解説を見る</summary><div class="answer-content"><div class="answer">✅ 3 $\mu\text{F}$</div><div class="explanation">先に並列になっている $2\mu\text{F}$ と $4\mu\text{F}$ の部分（$C_{並列}$ とします）を計算します。<br>$C_{並列} = 2 + 4 = 6\ \mu\text{F}$<br>これと直列になっている $6\ \mu\text{F}$ を計算します。<br>分母を $6$ に揃えて足し算をします。<br>$\frac{1}{C} = \frac{1}{6} + \frac{1}{6}$<br>$\frac{1}{C} = \frac{2}{6}$<br>約分して $\frac{1}{C} = \frac{1}{3}$ となるため、ひっくり返して $C = 3\ \mu\text{F}$</div></div></details>
+        </div>
+    </div>
+
+    <!-- =========================
+         抵抗値の計算
+    ========================= -->
+    <h2 id="calc-resistor">抵抗値の計算 <span class="h2-subtext">（ここは計算問題はあまり出ない）</span></h2>
+    <div class="formula-box">
+        <strong>$R = \rho \times \frac{l}{S}$</strong><br>
+        （抵抗 $\Omega$）＝（抵抗率 $\Omega\cdot\text{m}$）$\times$（長さ $m$）$\div$（断面積 $\text{m}^2$）
+    </div>
+
+    <!-- 電気抵抗のイメージ図 -->
+    <img src="image_3c1c8f.jpg" alt="電気抵抗を水の流れで考えてみる" class="reference-image">
+
+    <div class="problem-section">
+        <div class="problem">
+            <div class="question-text"><span class="q-mark">Q.</span>抵抗率 $2 \times 10^{-6}\ \Omega\cdot\text{m}$、長さ $50\text{m}$、断面積 $1 \times 10^{-4}\ \text{m}^2$ の導線の抵抗 $R$ は？</div>
+            <div class="svg-container">
+                <svg class="svg-circuit" viewBox="0 0 300 120" width="300">
+                    <ellipse cx="50" cy="50" rx="10" ry="25" fill="none" stroke="#334155" stroke-width="2"/>
+                    <ellipse cx="200" cy="50" rx="10" ry="25" fill="#eff6ff" stroke="#334155" stroke-width="2"/>
+                    <path d="M 50 25 L 200 25 M 50 75 L 200 75" fill="none" stroke="#334155" stroke-width="2"/>
+                    <text class="label" x="125" y="50" font-size="12">ρ = 2×10<tspan dy="-5" font-size="9">-6</tspan><tspan dy="5"> Ω・m</tspan></text>
+                    <path d="M 50 85 L 200 85" fill="none" stroke="#1e293b" stroke-dasharray="4,2"/>
+                    <text class="label" x="125" y="100" font-size="12">l = 50 m</text>
+                    <path d="M 210 50 L 230 30" fill="none" stroke="#1e293b"/>
+                    <text class="label" x="235" y="25" font-size="12" text-anchor="start">S = 1×10<tspan dy="-5" font-size="9">-4</tspan><tspan dy="5"> m²</tspan></text>
+                </svg>
+            </div>
+            <details><summary>解答と解説を見る</summary><div class="answer-content"><div class="answer">✅ 1 $\Omega$</div><div class="explanation">$R = (2 \times 10^{-6}) \times \frac{50}{1 \times 10^{-4}} = \frac{100 \times 10^{-6}}{10^{-4}} = 100 \times 10^{-2} = 1\ \Omega$</div></div></details>
+        </div>
+        <div class="problem">
+            <div class="question-text"><span class="q-mark">Q.</span>抵抗 $10\ \Omega$ の金属線。長さを2倍、断面積を半分（0.5倍）にすると抵抗は何 $\Omega$ になる？</div>
+            <div class="svg-container">
+                <svg class="svg-circuit" viewBox="0 0 300 160" width="300">
+                    <!-- 元の抵抗 -->
+                    <ellipse cx="80" cy="30" rx="8" ry="20" fill="none" stroke="#334155" stroke-width="2"/>
+                    <ellipse cx="220" cy="30" rx="8" ry="20" fill="#eff6ff" stroke="#334155" stroke-width="2"/>
+                    <path d="M 80 10 L 220 10 M 80 50 L 220 50" fill="none" stroke="#334155" stroke-width="2"/>
+                    <text class="label" x="150" y="30" font-size="12">R = 10Ω（元）</text>
+                    <text class="label" x="240" y="30" font-size="12" text-anchor="start">l, S</text>
+                    
+                    <!-- 矢印 -->
+                    <path d="M 150 70 L 150 90" fill="none" stroke="#2563eb" stroke-width="3"/>
+                    <polygon points="150,95 145,85 155,85" fill="#2563eb"/>
+        
+                    <!-- 変化後 -->
+                    <ellipse cx="40" cy="130" rx="4" ry="10" fill="none" stroke="#334155" stroke-width="2"/>
+                    <ellipse cx="260" cy="130" rx="4" ry="10" fill="#eff6ff" stroke="#334155" stroke-width="2"/>
+                    <path d="M 40 120 L 260 120 M 40 140 L 260 140" fill="none" stroke="#334155" stroke-width="2"/>
+                    <text class="label" x="150" y="130" font-size="12">R' = ? （長さ2倍・断面積0.5倍）</text>
+                </svg>
+            </div>
+            <details><summary>解答と解説を見る</summary><div class="answer-content"><div class="answer">✅ 40 $\Omega$</div><div class="explanation">公式より、抵抗は「長さに比例」「断面積に反比例」します。<br>長さ2倍で抵抗は2倍。断面積半分（細くなる）で電流が通りにくくなりさらに2倍。<br>よって $10 \times 2 \times 2 = 40\ \Omega$</div></div></details>
+        </div>
+        <div class="problem">
+            <div class="question-text"><span class="q-mark">Q.</span>抵抗率 $1.6 \times 10^{-7}\ \Omega\cdot\text{m}$、断面積 $2 \times 10^{-6}\ \text{m}^2$。抵抗を $4\ \Omega$ にしたい。必要な長さ $l$ は？</div>
+            <div class="svg-container">
+                <svg class="svg-circuit" viewBox="0 0 300 120" width="300">
+                    <ellipse cx="50" cy="50" rx="10" ry="25" fill="none" stroke="#334155" stroke-width="2"/>
+                    <ellipse cx="200" cy="50" rx="10" ry="25" fill="#eff6ff" stroke="#334155" stroke-width="2"/>
+                    <path d="M 50 25 L 200 25 M 50 75 L 200 75" fill="none" stroke="#334155" stroke-width="2"/>
+                    <text class="label" x="125" y="50" font-size="12">ρ = 1.6×10<tspan dy="-5" font-size="9">-7</tspan><tspan dy="5"> Ω・m</tspan></text>
+                    <path d="M 50 85 L 200 85" fill="none" stroke="#1e293b" stroke-dasharray="4,2"/>
+                    <text class="label" x="125" y="100" font-size="12">l = ?</text>
+                    <path d="M 210 50 L 230 30" fill="none" stroke="#1e293b"/>
+                    <text class="label" x="235" y="25" font-size="12" text-anchor="start">S = 2×10<tspan dy="-5" font-size="9">-6</tspan><tspan dy="5"> m²</tspan></text>
+                </svg>
+            </div>
+            <details><summary>解答と解説を見る</summary><div class="answer-content"><div class="answer">✅ 50 m</div><div class="explanation">$4 = (1.6 \times 10^{-7}) \times \frac{l}{2 \times 10^{-6}}$<br>$4 = 0.08 \times l$<br>$l = 50\text{m}$</div></div></details>
+        </div>
+    </div>
+
+    <!-- =========================
+         ジュール熱
+    ========================= -->
+    <h2 id="joule">ジュール熱</h2>
+    <div class="formula-box">
+        <strong>$Q = V \times I \times t$</strong><br>
+        （熱 $J$）＝（電圧 $V$）$\times$（電流 $A$）$\times$（時間：秒 $s$）
+    </div>
+
+    <div class="problem-section">
+        <div class="problem">
+            <div class="question-text"><span class="q-mark">Q.</span>$100\text{V}, 5\text{A}$ で 2分間 使用した時のジュール熱 $Q$ [J] は？</div>
+            <div class="svg-container">
+                <svg class="svg-circuit" viewBox="0 0 200 120" width="200">
+                    <path class="wire" d="M 40,90 L 40,30 L 70,30 M 130,30 L 160,30 L 160,90" />
+                    <!-- 電池 -->
+                    <path class="power-src" d="M 95,80 L 95,100 M 105,85 L 105,95" stroke-width="3"/>
+                    <path class="wire" d="M 40,90 L 95,90 M 105,90 L 160,90" />
+                    <text class="label" x="100" y="110">100V</text>
+                    
+                    <rect class="resistor" x="70" y="20" width="60" height="20" />
+                    <text class="label" x="100" y="10">電熱器</text>
+                    <text class="label" x="100" y="55" fill="#334155" font-size="12">t=2分 → Q=?</text>
+                    <!-- 電流の矢印 -->
+                    <path class="wire" d="M 135,30 L 150,30 L 145,25 M 150,30 L 145,35" stroke="#2563eb" fill="none" stroke-width="2"/>
+                    <text class="label" fill="#2563eb" x="145" y="15">I=5A</text>
+                </svg>
+            </div>
+            <details><summary>解答と解説を見る</summary><div class="answer-content"><div class="answer">✅ 60,000 J</div><div class="explanation">時間は秒に直して計算します。（$2\text{分} = 120\text{秒}$）<br>$100\text{V} \times 5\text{A} \times 120\text{秒} = 60,000\text{J}$</div></div></details>
+        </div>
+        
+        <div class="problem">
+            <div class="question-text"><span class="q-mark">Q.</span>$20\ \Omega$ の抵抗に $2\text{A}$ を 30秒間 流した時のジュール熱 $Q$ [J] は？</div>
+            <div class="svg-container">
+                <svg class="svg-circuit" viewBox="0 0 200 120" width="200">
+                    <path class="wire" d="M 40,90 L 40,30 L 70,30 M 130,30 L 160,30 L 160,90" />
+                    <path class="power-src" d="M 95,80 L 95,100 M 105,85 L 105,95" stroke-width="3"/>
+                    <path class="wire" d="M 40,90 L 95,90 M 105,90 L 160,90" />
+                    <text class="label" x="100" y="110">V=?</text>
+                    
+                    <rect class="resistor" x="70" y="20" width="60" height="20" />
+                    <text class="label" x="100" y="10">20Ω</text>
+                    <text class="label" x="100" y="55" fill="#334155" font-size="12">t=30秒 → Q=?</text>
+                    <!-- 電流の矢印 -->
+                    <path class="wire" d="M 135,30 L 150,30 L 145,25 M 150,30 L 145,35" stroke="#2563eb" fill="none" stroke-width="2"/>
+                    <text class="label" fill="#2563eb" x="145" y="15">I=2A</text>
+                </svg>
+            </div>
+            <details><summary>解答と解説を見る</summary><div class="answer-content"><div class="answer">✅ 2,400 J</div><div class="explanation">まずオームの法則で $V = 2\text{A} \times 20\ \Omega = 40\text{V}$。<br>$Q = 40\text{V} \times 2\text{A} \times 30\text{秒} = 2,400\text{J}$</div></div></details>
+        </div>
+
+        <div class="problem">
+            <div class="question-text"><span class="q-mark">Q.</span>$100\text{V}, 2\text{A}$ のヒーターで $12,000\text{J}$ 発生させるには何秒間（何分間）必要か？</div>
+            <details><summary>解答と解説を見る</summary><div class="answer-content"><div class="answer">✅ 60秒間 （1分間）</div><div class="explanation">$12,000 = 100 \times 2 \times t$<br>$12,000 = 200 \times t$<br>$t = 60\text{秒} = 1\text{分}$</div></div></details>
+        </div>
+    </div>
+
+    <!-- =========================
+         クーロンの法則
+    ========================= -->
+    <h2 id="coulomb">クーロンの法則 <span class="h2-subtext">（ここは計算問題はあまり出ない）</span></h2>
+    <div class="formula-box">
+        <strong>$F = k \times \frac{q_1 \times q_2}{r^2}$</strong><br>
+        （力 $N$）＝（比例定数 $9 \times 10^9$）$\times$（電荷 $C$）$\times$（電荷 $C$）$\div$（距離 $m$ の2乗）
+    </div>
+
+    <div class="problem-section">
+        <div class="problem">
+            <div class="question-text"><span class="q-mark">Q.</span>真空中で $2 \times 10^{-6}\text{ C}$ と $3 \times 10^{-6}\text{ C}$ が $3\text{m}$ 離れている。静電気力 $F$ [N] は？</div>
+            <div class="svg-container" style="border:none; padding: 0 20px;">
+                <svg class="svg-circuit" viewBox="-20 0 390 140" width="390">
+                    <circle cx="80" cy="60" r="25" fill="none" stroke="#1e293b" stroke-width="3" />
+                    <text class="label" x="80" y="60">q<tspan dy="3" font-size="11">1</tspan></text>
+                    <circle cx="270" cy="60" r="25" fill="none" stroke="#1e293b" stroke-width="3" />
+                    <text class="label" x="270" y="60">q<tspan dy="3" font-size="11">2</tspan></text>
+                    <!-- 距離の点線 -->
+                    <path d="M 105 60 L 245 60" fill="none" stroke="#1e293b" stroke-width="3" stroke-dasharray="6,4" />
+                    <text class="label" x="175" y="45">r = 3 m</text>
+                    <!-- 力の矢印 -->
+                    <path d="M 55 60 L 25 60" fill="none" stroke="#60a5fa" stroke-width="4" />
+                    <polygon points="25,60 40,50 40,70" fill="#60a5fa" />
+                    <text class="label" x="35" y="85">F</text>
+                    
+                    <path d="M 295 60 L 325 60" fill="none" stroke="#60a5fa" stroke-width="4" />
+                    <polygon points="325,60 310,50 310,70" fill="#60a5fa" />
+                    <text class="label" x="315" y="85">F</text>
+
+                    <!-- 電荷量テキスト -->
+                    <text class="label" x="80" y="100">2×10<tspan dy="-5" font-size="10">-6</tspan><tspan dy="5"> C</tspan></text>
+                    <text class="label" x="270" y="100">3×10<tspan dy="-5" font-size="10">-6</tspan><tspan dy="5"> C</tspan></text>
+                </svg>
+            </div>
+            <details><summary>解答と解説を見る</summary><div class="answer-content"><div class="answer">✅ 0.006 N ($6 \times 10^{-3}\text{ N}$)</div><div class="explanation">$F = (9 \times 10^9) \times \frac{(2 \times 10^{-6}) \times (3 \times 10^{-6})}{3^2}$<br>$= 9 \times 10^9 \times \frac{6 \times 10^{-12}}{9}$<br>$= 6 \times 10^{-3}\text{ N}$</div></div></details>
+        </div>
+    </div>
+
+    <!-- =========================
+         交流回路
+    ========================= -->
+    <h2 id="ac">交流回路</h2>
+    
+    <!-- 交流の実効値と最大値のグラフ -->
+    <div class="svg-container" style="border:none; margin-bottom: 0;">
+        <svg class="svg-circuit" viewBox="0 0 300 150" width="300">
+            <!-- 軸 -->
+            <path class="wire" d="M 30,10 L 30,130 L 280,130" stroke-width="3" />
+            <text class="label" x="150" y="145" fill="#334155">時間 t</text>
+            <!-- サイン波 -->
+            <path d="M 30,80 q 30,-70 60,0 t 60,0 t 60,0 t 60,0" fill="none" stroke="#d97736" stroke-width="3" />
+            <!-- 最大値の線 -->
+            <path d="M 30,25 L 280,25" fill="none" stroke="#1e293b" stroke-width="2" stroke-dasharray="6,4" />
+            <text class="label" x="240" y="15" fill="#1e293b">最大値(Vm)</text>
+            <!-- 実効値の線 -->
+            <path d="M 30,50 L 280,50" fill="none" stroke="#1e293b" stroke-width="2" stroke-dasharray="6,4" />
+            <text class="label" x="240" y="40" fill="#1e293b">実効値(V)</text>
+        </svg>
+    </div>
+
+    <div class="formula-box">
+        （実効値）＝（最大値）$\times \frac{1}{\sqrt{2}}$ （約0.7）<br>
+    </div>
+    
+    <!-- =========================
+         インピーダンス
+    ========================= -->
+    <h2 id="impedance">インピーダンス</h2>
+    <div class="formula-box">
+        <strong>$V = I \times Z$</strong> （電圧＝電流 $\times$ インピーダンス）<br>
+        <strong>RLC直列インピーダンス：</strong> $Z = \sqrt{R^2 + (X_L - X_c)^2}$<br>
+        ※ $X_L$: コイル(誘導), $X_c$: コンデンサ(容量)。無いものは $0$ とみなす。
+    </div>
+    
+    <div class="problem-section">
+        <div class="problem">
+            <div class="question-text"><span class="q-mark">Q.</span>$R = 4\ \Omega$, $X_L = 9\ \Omega$, $X_c = 6\ \Omega$ を直列接続。インピーダンス $Z$ は？</div>
+            <div class="svg-container">
+                <svg class="svg-circuit" viewBox="0 0 350 70" width="350">
+                    <path class="wire" d="M 10,35 L 40,35 M 90,35 L 120,35 M 200,35 L 230,35 M 260,35 L 300,35" />
+                    <!-- 交流電源 -->
+                    <circle cx="315" cy="35" r="15" fill="none" stroke="#334155" stroke-width="2.5"/>
+                    <path class="wire" d="M 305,35 Q 310,25 315,35 T 325,35" stroke-width="2" />
+                    <path class="wire" d="M 330,35 L 340,35" />
+                    <!-- 抵抗 R -->
+                    <rect class="resistor" x="40" y="25" width="50" height="20" /><text class="label" x="65" y="15">R: 4Ω</text>
+                    <!-- コイル L -->
+                    <path class="wire" d="M 120,35 Q 130,15 140,35 T 160,35 T 180,35 T 200,35" />
+                    <text class="label" x="160" y="15">X<tspan dy="3" font-size="11">L</tspan><tspan dy="-3">: 9Ω</tspan></text>
+                    <!-- コンデンサ C -->
+                    <path class="wire" d="M 240,20 L 240,50 M 250,20 L 250,50" stroke-width="3"/>
+                    <text class="label" x="245" y="15">X<tspan dy="3" font-size="11">c</tspan><tspan dy="-3">: 6Ω</tspan></text>
+                </svg>
+            </div>
+            <details><summary>解答と解説を見る</summary><div class="answer-content"><div class="answer">✅ 5 $\Omega$</div><div class="explanation">$Z = \sqrt{4^2 + (9 - 6)^2} = \sqrt{4^2 + 3^2} = \sqrt{16 + 9} = \sqrt{25} = 5\ \Omega$</div></div></details>
+        </div>
+        
+        <div class="problem">
+            <div class="question-text"><span class="q-mark">Q.</span>抵抗 $R = 8\ \Omega$ と、$X_c = 6\ \Omega$ のコンデンサーの直列接続。インピーダンス $Z$ は？</div>
+            <div class="svg-container">
+                <svg class="svg-circuit" viewBox="0 0 250 70" width="250">
+                    <path class="wire" d="M 10,35 L 40,35 M 90,35 L 130,35 M 150,35 L 200,35" />
+                    <circle cx="215" cy="35" r="15" fill="none" stroke="#334155" stroke-width="2.5"/>
+                    <path class="wire" d="M 205,35 Q 210,25 215,35 T 225,35" stroke-width="2" />
+                    <path class="wire" d="M 230,35 L 240,35" />
+                    
+                    <rect class="resistor" x="40" y="25" width="50" height="20" /><text class="label" x="65" y="15">R: 8Ω</text>
+                    <path class="wire" d="M 130,20 L 130,50 M 140,20 L 140,50" stroke-width="3"/>
+                    <text class="label" x="135" y="15">X<tspan dy="3" font-size="11">c</tspan><tspan dy="-3">: 6Ω</tspan></text>
+                </svg>
+            </div>
+            <details><summary>解答と解説を見る</summary><div class="answer-content"><div class="answer">✅ 10 $\Omega$</div><div class="explanation">コイルが無いので $X_L=0$ として計算します。<br>$Z = \sqrt{8^2 + 6^2} = \sqrt{64 + 36} = \sqrt{100} = 10\ \Omega$</div></div></details>
+        </div>
+
+        <div class="problem">
+            <div class="question-text"><span class="q-mark">Q.</span>抵抗 $R = 12\ \Omega$ と、$X_L = 5\ \Omega$ のコイルの直列接続。インピーダンス $Z$ は？</div>
+            <div class="svg-container">
+                <svg class="svg-circuit" viewBox="0 0 250 70" width="250">
+                    <path class="wire" d="M 10,35 L 40,35 M 90,35 L 110,35 M 190,35 L 200,35" />
+                    <circle cx="215" cy="35" r="15" fill="none" stroke="#334155" stroke-width="2.5"/>
+                    <path class="wire" d="M 205,35 Q 210,25 215,35 T 225,35" stroke-width="2" />
+                    <path class="wire" d="M 230,35 L 240,35" />
+                    
+                    <rect class="resistor" x="40" y="25" width="50" height="20" /><text class="label" x="65" y="15">R: 12Ω</text>
+                    <path class="wire" d="M 110,35 Q 120,15 130,35 T 150,35 T 170,35 T 190,35" />
+                    <text class="label" x="150" y="15">X<tspan dy="3" font-size="11">L</tspan><tspan dy="-3">: 5Ω</tspan></text>
+                </svg>
+            </div>
+            <details><summary>解答と解説を見る</summary><div class="answer-content"><div class="answer">✅ 13 $\Omega$</div><div class="explanation">コンデンサが無いので $X_c=0$ として計算します。<br>$Z = \sqrt{12^2 + 5^2} = \sqrt{144 + 25} = \sqrt{169} = 13\ \Omega$</div></div></details>
+        </div>
+    </div>
+
+    <!-- =========================
+         変圧器
+    ========================= -->
+    <h2 id="transformer">変圧器</h2>
+    <div class="formula-box">
+        <strong>$\frac{V_1}{V_2} = \frac{N_1}{N_2} = \frac{I_2}{I_1}$</strong><br>
+        <strong>$V_1 : V_2 = N_1 : N_2 = I_2 : I_1$</strong> （比の形）<br><br>
+        （電圧は巻数に比例、電流は巻数に反比例）
+    </div>
+    
+    <div class="problem-section">
+        <div class="problem">
+            <div class="question-text"><span class="q-mark">Q.</span>2次側の巻数 $N_2$ を 4倍 にした。$V_2$ は $V_1$ の何倍？ $I_2$ は $I_1$ の何倍？</div>
+            <details><summary>解答と解説を見る</summary><div class="answer-content"><div class="answer">✅ 電圧は 4倍、電流は $\frac{1}{4}$ 倍 (0.25倍)</div><div class="explanation">電圧は巻数に比例し、電流は反比例します。</div></div></details>
+        </div>
+        <div class="problem">
+            <div class="question-text"><span class="q-mark">Q.</span>$V_1$ を 2次側で $\frac{1}{5}$倍に下げた。巻数 $N_2$ は $N_1$ の何倍？ 1次電流 $I_1$ は $I_2$ の何倍？</div>
+            <details><summary>解答と解説を見る</summary><div class="answer-content"><div class="answer">✅ 巻数は $\frac{1}{5}$ 倍、$I_1$ は $I_2$ の $\frac{1}{5}$ 倍</div><div class="explanation">電圧が1/5なら巻数も1/5。<br>電流は反比例で $I_2$ が5倍大きくなるため、「$I_1$ 視点」では $\frac{1}{5}$倍となります。</div></div></details>
+        </div>
+        <div class="problem">
+            <div class="question-text"><span class="q-mark">Q.</span>1次電流 $I_1$ が 2次電流 $I_2$ の 3倍 流れている。巻数 $N_2$ は $N_1$ の何倍？ $V_2$ は $V_1$ の何倍？</div>
+            <details><summary>解答と解説を見る</summary><div class="answer-content"><div class="answer">✅ 巻数は 3倍、電圧は 3倍</div><div class="explanation">$I_1$ が大きい＝1次側が低電圧。<br>電流が $I_1 : I_2 = 3 : 1$ なので、巻数・電圧は逆比の $N_1 : N_2 = 1 : 3$ になります。</div></div></details>
+        </div>
+    </div>
+
+    <!-- =========================
+         計器の接続
+    ========================= -->
+    <h2 id="meter">計器の接続</h2>
+    <div class="formula-box">
+        <strong>電圧計(V)</strong> は、測定したい回路と <strong style="color: var(--primary);">並列</strong> に接続する。<br>
+        <strong>電流計(A)</strong> は、測定したい回路と <strong style="color: var(--primary);">直列</strong> に接続する。
+    </div>
+
+    <!-- 計器の接続の回路図 -->
+    <div class="svg-container" style="border:none; margin-bottom: 50px;">
+        <svg class="svg-circuit" viewBox="0 0 250 160" width="250">
+            <!-- 回路の導線 -->
+            <path class="wire" d="M 40 120 L 40 40 L 60 40 M 100 40 L 130 40 M 190 40 L 210 40 L 210 120 L 135 120" />
+            <path class="wire" d="M 40 120 L 115 120" />
+            
+            <!-- 直流電源 -->
+            <path class="power-src" d="M 115 110 L 115 130 M 125 115 L 125 125 M 135 110 L 135 130" stroke-width="2" />
+            
+            <!-- 電流計 (A) -->
+            <circle cx="80" cy="40" r="15" fill="#fff" stroke="#334155" stroke-width="2.5" />
+            <text class="label" x="80" y="42">A</text>
+            <text class="label" x="80" y="15" fill="var(--primary)" font-size="12">直列に接続</text>
+            
+            <!-- 測定対象の抵抗 (R) -->
+            <rect class="resistor" x="130" y="30" width="60" height="20" />
+            <text class="label" x="160" y="40">R</text>
+            
+            <!-- 電圧計 (V) -->
+            <path class="wire" d="M 120 40 L 120 80 L 145 80 M 175 80 L 200 80 L 200 40" />
+            <circle cx="160" cy="80" r="15" fill="#fff" stroke="#334155" stroke-width="2.5" />
+            <text class="label" x="160" y="82">V</text>
+            <text class="label" x="160" y="110" fill="var(--primary)" font-size="12">並列に接続</text>
+        </svg>
+    </div>
+
+</div>
+
+</body>
+</html>
